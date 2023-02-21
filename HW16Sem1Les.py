@@ -27,3 +27,55 @@
 
 # print(petya, katya, serg)
 
+# Задача 6: Вы пользуетесь общественным транспортом? Вероятно, вы расплачивались за проезд
+# и получали билет с номером. Счастливым билетом называют такой билет с шестизначным номером,
+# где сумма первых трех цифр равна сумме последних трех.
+# Т.е. билет с номером 385916 – счастливый, т.к. 3+8+5=9+1+6.
+# Вам требуется написать программу, которая проверяет счастливость билета.
+
+# *Пример:*
+# 385916 -> yes
+# 123456 -> no
+
+# #Вариант 1. Математический.
+
+# number = int(input("Введите число из билета: "))
+# if number//100000 < 1 or number//100000 > 6:
+#     print("Введено некорректное число")
+#     quit()
+# firstNumber = 0
+# secondNumber = 0
+# for i in range(3):
+#     firstNumber += number % 10
+#     number //= 10
+# #print(firstNumber)
+# for i in range(3):
+#     secondNumber += number % 10
+#     number //= 10
+# #print(secondNumber)
+# if firstNumber == secondNumber:
+#     print("yes")
+# else:
+#     print("no")
+
+
+#Вариант 2. Строковый (работает корректно, даже если номер начинается с 0)
+
+# number = input("Введите число из билета: ")
+
+# if len(number) < 6 or len(number) > 6:
+#     print("Введено некорректное число")
+#     quit()
+# firstSum = 0
+# secondSum = 0
+# for i in range(3):
+#     firstSum += int(number[i])
+# #print(firstSum)
+# for i in range(3,6):
+#     secondSum += int(number[i])
+# #print(secondSum)
+
+# if firstSum == secondSum:
+#     print("yes")
+# else:
+#     print("no")
